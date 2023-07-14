@@ -250,7 +250,7 @@
                     <label for="Grado">Tipo Persona</label>
                     <select class="form-control" id="tipoPersona">
                       <option>Natural</option>
-                      <option>juridico</option>
+                      <option>Juridico</option>
                     </select>
                 </div>
 
@@ -268,7 +268,7 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cerrarModal">Cancelar</button>
-            <button type="button" class="btn btn-primary" onclick="editarPrestamo(this)" id="btnTitleModal">Guardar</button>;
+            <button type="submit" class="btn btn-primary" onclick="editarPrestamo(this)" id="btnTitleModal">Guardar</button>;
         </div>
         </div>
     </div>
@@ -313,6 +313,40 @@
     });
 
 </script>
+<!-- Script adicional para enviar el correo -->
+<!--<script>
+    function enviarCorreo() {
+        var nombre = document.getElementById('nombre').value;
+        var email = document.getElementById('email').value;
+        var mensaje = document.getElementById('mensaje').value;
+
+        var data = {
+            nombre: nombre,
+            email: email,
+            mensaje: mensaje
+        };
+
+        fetch('/enviar-correo', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(function(response) {
+            return response.text();
+        })
+        .then(function(message) {
+            alert(message);
+            document.getElementById('nombre').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('mensaje').value = '';
+        })
+        .catch(function(error) {
+            console.error('Error:', error);
+        });
+    }
+</script>-->
 <script src="./controller/controllerPrestamo.js"></script>
 </body>
 </html>
